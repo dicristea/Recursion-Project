@@ -6,3 +6,5 @@ Using iteration, write a function fibs which takes a number and returns an array
 Now write another method fibsRec which solves the same problem recursively.
 
 ## Merge Sort Project
+
+Build a function mergeSort that takes in an array and returns a sorted array, using a recursive merge sort methodology.

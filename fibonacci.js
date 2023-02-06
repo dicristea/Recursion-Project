@@ -1,5 +1,3 @@
-// Warmup Fibonacci
-
 //simplified Iterative Fibonacci sum
 function fibonacci(num) {
   let a = 0;
@@ -12,7 +10,6 @@ function fibonacci(num) {
     b = temp;
     num--;
   }
-
   return b;
 }
 
