@@ -1,26 +1,3 @@
-function merge(leftArray, rightArray) {
-  let result = [];
-  let i = 0;
-  let j = 0;
-
-  while (i < leftArray.length && j < rightArray.length) {
-    if (leftArray[i] < rightArray[j]) {
-      result.push(leftArray[i++]);
-    } else if (rightArray[j] < leftArray[i]) {
-      result.push(rightArray[j++]);
-    }
-  }
-
-  while (i < leftArray.length) {
-    result.push(leftArray[i++]);
-  }
-  while (j < rightArray.length) {
-    result.push(rightArray[j++]);
-  }
-
-  return result;
-}
-
 function mergeSort(array) {
   if (array.length === 1) {
     return array; // BASE CASE
@@ -30,7 +7,28 @@ function mergeSort(array) {
   let mid = Math.floor(array.length / 2);
   let left = mergeSort(array.slice(0, mid));
   let right = mergeSort(array.slice(mid));
-  return merge(left, right);
+
+  // merging happens
+  let sortedArray = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      sortedArray.push(left[i++]);
+    } else if (right[j] < left[i]) {
+      sortedArray.push(right[j++]);
+    }
+  }
+
+  while (i < left.length) {
+    sortedArray.push(left[i++]);
+  }
+  while (j < right.length) {
+    sortedArray.push(right[j++]);
+  }
+
+  return sortedArray;
 }
 
 let unSortedArray = [9, 3, 7, 5, 6, 4, 8, 2];
